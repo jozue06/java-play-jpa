@@ -22,7 +22,7 @@ import static play.libs.Json.toJson;
 public class Application extends Controller {
 
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+        return ok("A text OK response");
     }
 
     @Transactional
@@ -37,11 +37,11 @@ public class Application extends Controller {
         }
 
         JPA.em().persist(person);
-        return ok();
+        return ok(toJson(person));
     }
 
     @Transactional(readOnly = true)
-    public Result listPerson(){
+    public Result listPersons(){
         CriteriaBuilder cb = JPA.em().getCriteriaBuilder();
         CriteriaQuery<Person> cq = cb.createQuery(Person.class);
 

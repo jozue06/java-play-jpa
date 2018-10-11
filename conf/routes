@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /person                     controllers.Application.listPerson()
+GET     /persons                    controllers.Application.listPersons()
 GET     /person/:id                 controllers.Application.getPerson(id: Long)
 POST    /person                     controllers.Application.addPerson()
 PUT     /person/:id                 controllers.Application.updatePerson(id: Long)
